@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (*ptr) /* iterate the entire string excludig null */
 	{
-		if (*ptr == '%') /* if there is a format specifier */
+		if (*ptr == '%' && ptr != NULL) /* if there is a format specifier */
 		{
 			ptr++; /* move to the next character*/
 
