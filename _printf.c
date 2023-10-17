@@ -14,9 +14,8 @@ int _printf(const char *format, ...)
 	const char *ptr = format;
 	char *str;
 
-	if (format == NULL)
-		return (-1);
-
+	if (format != NULL)
+	{
 	va_start(args, format);
 	while (*ptr) /* iterate the entire string excludig null */
 	{
@@ -58,4 +57,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (chars_printed); /* no of chars printed */
+	}
 }
