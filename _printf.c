@@ -49,8 +49,11 @@ int _printf(const char *format, ...)
 				chars_printed += printf("%d",(va_arg(args, int)));
 			}
 		}
-		putchar(*ptr);
-		chars_printed++;
+		else
+		{
+			putchar(*ptr);
+			chars_printed++;
+		}
 		ptr++;
 	}
 	va_end(args);
