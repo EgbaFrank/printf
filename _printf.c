@@ -14,6 +14,9 @@ int _printf(const char *format, ...)
 	const char *ptr = format;
 	char *str;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(args, format);
 	while (*ptr) /* iterate the entire string excludig null */
 	{
