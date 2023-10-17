@@ -16,46 +16,46 @@ int _printf(const char *format, ...)
 
 	if (format != NULL)
 	{
-	va_start(args, format);
-	while (*ptr) /* iterate the entire string excludig null */
-	{
-		if (*ptr == '%') /* if there is a format specifier */
+		va_start(args, format);
+		while (*ptr) /* iterate the entire string excludig null */
 		{
-			ptr++; /* move to the next character*/
+			if (*ptr == '%') /* if there is a format specifier */
+			{
+				ptr++; /* move to the next character*/
 
-			if (*ptr == 'c')
-			{
-				putchar(va_arg(args, int)); /* int cause its stored in ASCII*/
-				chars_printed++;
-			}
-			else if (*ptr == 's')
-			{
-				str = va_arg(args, char *);
-				while (*str)
+				if (*ptr == 'c')
 				{
-					putchar(*str);
+					putchar(va_arg(args, int)); /* int cause its stored in ASCII*/
 					chars_printed++;
-					str++;
+				}
+				else if (*ptr == 's')
+				{
+					str = va_arg(args, char *);
+					while (*str)
+					{
+						putchar(*str);
+						chars_printed++;
+						str++;
+					}
+				}
+				else if (*ptr == '%')
+				{
+					putchar('%');
+					chars_printed++;
+				}
+				else if (*ptr == 'd' || *ptr == 'i')
+				{
+					chars_printed += print_integer(va_arg(args, int));
 				}
 			}
-			else if (*ptr == '%')
+			else /* if there is no format specifier print whatever input*/
 			{
-				putchar('%');
+				putchar(*ptr);
 				chars_printed++;
 			}
-			else if (*ptr == 'd' || *ptr == 'i')
-			{
-				chars_printed += print_integer(va_arg(args, int));
-			}
+			ptr++;
 		}
-		else /* if there is no format specifier print whatever input*/
-		{
-			putchar(*ptr);
-			chars_printed++;
-		}
-		ptr++;
-	}
-	va_end(args);
-	return (chars_printed); /* no of chars printed */
+		va_end(args);
+		return (chars_printed); /* no of chars printed */
 	}
 }
