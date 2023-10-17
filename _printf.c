@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*ptr == 'd' || *ptr == 'i')
 			{
-				chars_printed += print_integer(va_arg(args, int));
+				chars_printed += printf("%d",(va_arg(args, int));
 			}
 		}
 		putchar(*ptr);
