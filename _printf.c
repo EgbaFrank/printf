@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	const char *ptr = format;
 	char *str;
 
-	if (format != NULL)
+	if (*format != NULL)
 	{
 		va_start(args, format);
 		while (*ptr) /* iterate the entire string excludig null */
@@ -48,11 +48,8 @@ int _printf(const char *format, ...)
 					chars_printed += print_integer(va_arg(args, int));
 				}
 			}
-			else /* if there is no format specifier print whatever input*/
-			{
-				putchar(*ptr);
-				chars_printed++;
-			}
+			putchar(*ptr);
+			chars_printed++;
 			ptr++;
 		}
 		va_end(args);
