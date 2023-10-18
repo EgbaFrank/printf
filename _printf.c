@@ -31,15 +31,15 @@ int _printf(const char *format, ...)
 			}
 			else if (*ptr == 's')
 			{
-				str = va_arg(args, char *); /* iterate and print out string elements */
-				while (*str)
+				str = va_arg(args, char *);
+				while (*str) /* iterate and print out string elements */
 				{
 					putchar(*str);
 					chars_printed++;
 					str++;
 				}
 			}
-			else if (*ptr == '%')
+			else if (*ptr == '%') /* for conversion specifier %% */
 			{
 				putchar('%');
 				chars_printed++;
