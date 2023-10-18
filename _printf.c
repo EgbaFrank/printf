@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 			{
 				chars_printed += printf("%d",(va_arg(args, int)));
 			}
-			else if (*ptr == 'b')
+			else if (*ptr == 'b') /* For unsigned integer */
 			{
 				chars_printed += printf("%b", (va_arg(args, unsigned int)));
 			}
