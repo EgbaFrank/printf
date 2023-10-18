@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*ptr == 's')
 			{
-				str = va_arg(args, char *);
+				str = va_arg(args, char *); /* iterate and print out string elements */
 				while (*str)
 				{
 					putchar(*str);
