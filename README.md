@@ -5,3 +5,4 @@ Usage: _printf("...[format specifier]", format);
 %s: prints strings
 %%: prints %
 %d and %i: prints integers
+%b: converts and print binary
