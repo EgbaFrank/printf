@@ -48,6 +48,10 @@ int _printf(const char *format, ...)
 			{
 				chars_printed += printf("%d",(va_arg(args, int)));
 			}
+			else if (*ptr == 'b')
+			{
+				chars_printed += printf("%b", (va_arg(args, unsigned int)));
+			}
 		}
 		else
 		{
