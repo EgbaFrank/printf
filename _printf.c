@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 				putchar('%');
 				chars_printed++;
 			}
-			else if (*ptr == 'd' || *ptr == 'i')
+			else if (*ptr == 'd' || *ptr == 'i') /* For integer printing */
 			{
 				chars_printed += printf("%d",(va_arg(args, int)));
 			}
