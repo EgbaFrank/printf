@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		{
 			if (*format == 'c' || *format == 's' || *format == '%' || *format == 'S')
 				chars_printed += print_char_string_percent(*format, args);
-			else if (*format == 'd' || *format == 'i' || *format == 'b')
+			else if (*format == 'd' || *format == 'i' || *format == 'b' || *format == 'p')
 				chars_printed += print_int_specifiers(*format, args);
 			else
 				chars_printed += print_unsigned_octal_hex(*format, args);

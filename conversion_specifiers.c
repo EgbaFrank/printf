@@ -67,7 +67,6 @@ int print_int_specifiers(char s, va_list args)
 			chars_printed += printf("%d", va_arg(args, int));
 			break;
 		case 'b':
-		{
 			n = va_arg(args, unsigned int);
 			for (i = 31; i >= 0; i--)
 			{
@@ -80,8 +79,11 @@ int print_int_specifiers(char s, va_list args)
 				putchar(bits[i] + '0');
 
 			chars_printed += bit_count;
-		}
 			break;
+		case 'p':
+			chars_printed += printf("%p", va_arg(args, void *));
+			break;
+
 	}
 	return (chars_printed);
 }
