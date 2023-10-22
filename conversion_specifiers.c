@@ -115,6 +115,3 @@ int print_unsigned_octal_hex(char s, va_list args)
 	}
 	return (chars_printed);
 }
-
-/**
- *
