@@ -29,22 +29,20 @@ int print_char_string_percent(char s, va_list args)
 			chars_printed++;
 			break;
 		case 'S':
-			{
-				str = va_arg(args, char *);
+			str = va_arg(args, char *);
 
-				while (*str)
-				{
-					if (*str >= 0 && *str < 32 || *str >= 127)
+			while (*str)
+			{
+				if (*str >= 0 && *str < 32 || *str >= 127)
 						chars_printed += printf("\\x%02X", (unsigned char)(*str));
-					else
-					{
-						putchar(*str);
-						chars_printed++;
-					}
-					str++;
+				else
+				{
+					putchar(*str);
+					chars_printed++;
 				}
-				return (chars_printed);
+				str++;
 			}
+			break;
 	}
 	return (chars_printed);
 }

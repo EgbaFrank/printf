@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && format++)
 		{
-			if (*format == 'S' || *format == 'c' || *format == 's' || *format == '%')
+			if (*format == 'c' || *format == 's' || *format == '%' || *format == 'S')
 				chars_printed += print_char_string_percent(*format, args);
 			else if (*format == 'd' || *format == 'i' || *format == 'b')
 				chars_printed += print_int_specifiers(*format, args);
