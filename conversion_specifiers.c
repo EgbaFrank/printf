@@ -34,7 +34,7 @@ int print_char_string_percent(char s, va_list args)
 			while (*str)
 			{
 				if (*str >= 0 && *str < 32 || *str >= 127)
-						chars_printed += printf("\\x%02X", (unsigned char)(*str));
+					chars_printed += printf("\\x%02X", (unsigned char)(*str));
 				else
 				{
 					putchar(*str);
@@ -62,11 +62,11 @@ int print_int_specifiers(char s, va_list args)
 
 	switch (s)
 	{
-		case 'd':
+		case 'd': /* for digits printing */
 		case 'i':
 			chars_printed += printf("%d", va_arg(args, int));
 			break;
-		case 'b':
+		case 'b': /* for binary printing */
 			n = va_arg(args, unsigned int);
 			for (i = 31; i >= 0; i--)
 			{
@@ -80,7 +80,7 @@ int print_int_specifiers(char s, va_list args)
 
 			chars_printed += bit_count;
 			break;
-		case 'p':
+		case 'p': /* for address printing */
 			chars_printed += printf("%p", va_arg(args, void *));
 			break;
 
