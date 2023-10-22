@@ -82,22 +82,19 @@ int print_unsigned_octal_hex(char s, va_list args)
 {
 	int chars_printed = 0;
 
-	if (!s)
-		return (-1);
-
 	switch (s)
 	{
 		case 'u':
-			chars_printed += printf("%u%u", va_arg(args, unsigned int));
+			chars_printed += printf("%u", va_arg(args, unsigned int));
 			break;
 		case 'o':
-			chars_printed += printf("%o%o", va_arg(args, unsigned int));
+			chars_printed += printf("%o", va_arg(args, unsigned int));
 			break;
 		case 'x':
-			chars_printed += printf("%x%x", va_arg(args, unsigned int));
+			chars_printed += printf("%x", va_arg(args, unsigned int));
 			break;
 		case 'X':
-			chars_printed += printf("%X%X", va_arg(args, unsigned int));
+			chars_printed += printf("%X", va_arg(args, unsigned int));
 			break;
 	}
 	return (chars_printed);
