@@ -44,6 +44,7 @@ int print_char_string_percent(char s, va_list args)
 					str++;
 				}
 			}
+	}
 	return (chars_printed);
 }
 
