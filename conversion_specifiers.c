@@ -33,7 +33,7 @@ int print_char_string_percent(char s, va_list args)
 
 			while (*str)
 			{
-				if (*str >= 0 && *str < 32 || *str >= 127)
+				if ((*str >= 0 && *str < 32) || *str >= 127)
 					chars_printed += printf("\\x%02X", (unsigned char)(*str));
 				else
 				{
