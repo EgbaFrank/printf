@@ -6,7 +6,7 @@
 
 int _printf(const char *format, ...);
 int print_char_string_percent(char s, va_list args);
-int print_int_specifiers(char s, va_list);
+int print_int_specifiers(char s, va_list args);
 
 
 #endif /* MAIN_H */

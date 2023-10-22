@@ -17,8 +17,8 @@ int print_char_string_percent(char s, va_list args)
 	switch (s)
 	{
 		case 'c':
-			putchar(va_arg(args, int);
-			chars_peinted++;
+			putchar(va_arg(args, int));
+			chars_printed++;
 			break;
 		case 's':
 			chars_printed += printf("%s", va_arg(args, char *));
@@ -28,7 +28,7 @@ int print_char_string_percent(char s, va_list args)
 			chars_printed++;
 			break;
 	}
-	return (char_printed);
+	return (chars_printed);
 }
 
 /**
@@ -65,10 +65,7 @@ int print_int_specifiers(char s, va_list args)
 
 			chars_printed += bit_count;
 		}
-			;
 			break;
-		}
-
 	}
 	return (chars_printed);
 }
