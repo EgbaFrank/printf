@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			putchar(*format);
+			putchar(*format); /* print regular characters */
 			chars_printed++;
 		}
 		format++;
